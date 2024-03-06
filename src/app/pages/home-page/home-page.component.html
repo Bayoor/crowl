@@ -1,0 +1,17 @@
+<section class="relative">
+  @if(!hideChatDialog) {
+    <app-modal
+      (closeIcon)="handleClickEvent($event)"
+      (minimiseIcon)="handleMinimiseEvent($event)"
+      [class.hidden]="minimizeChatDialog"
+    />
+  }
+  <app-chat-bot
+    (getStartedBtn)="handleClickEvent($event)"
+    [class.hidden]="!minimizeChatDialog"
+    [btnState]="getStartedBtnState"
+  />
+  <app-hero-section />
+  <app-section-one />
+  <app-section-two />
+</section>
